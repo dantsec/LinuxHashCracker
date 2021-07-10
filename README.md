@@ -41,7 +41,7 @@ git clone https://github.com/LinuxHashCracker
 cd LinuxHashCracker/
 
 # installing "make"
-sudo apt install make && sudo apt install update
+sudo apt update && sudo apt install make
 
 # compiling
 make
