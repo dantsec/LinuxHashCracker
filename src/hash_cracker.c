@@ -1,7 +1,7 @@
 /*
 
     * Program: Linux Hash Cracker
-    * Data: 27/04/2021 // Last modified: 09/07/21
+    * Data: 27/04/2021 // Last modified: 09/07/2021
     * Author: Dantalion-dev
     * Version: 1.0
     * License: MIT
