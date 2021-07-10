@@ -1,7 +1,7 @@
 /*
 
     * Program: Linux Hash Cracker
-    * Data: 27/04/2021
+    * Data: 27/04/2021 // Last modified: 09/07/21
     * Author: Dantalion-dev
     * Version: 1.0
     * License: MIT
@@ -14,14 +14,17 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define RED       "\x1B[31m"
+#define GREEN     "\x1B[32m"
+#define RESET     "\x1B[0m"
 #define BUFF 25
 
 void fatal(char *msg) {
-    fprintf(stderr, "Error: %s\n", msg);
+    fprintf(stderr, RED "[error]: %s\n", msg);
     exit(1);
 }
 
-void usage(void){
+void usage(void) {
     fatal("Use valid arguments.\n[!] Usage: ./crack <wordlist_path>\n");
 }
 
@@ -49,15 +52,15 @@ int main(int argc, char *argv[]) {
     while(fscanf(file, "%s", &passwd) != EOF) {
         result = (char *) crypt(passwd, salt);
         if (strcmp(complete, result) == 0) {
-            printf("\n\t [+] Found Password: %s\n", passwd);
+            printf(GREEN "\n\t [+] Found Password: %s\n", passwd);
             breakpoint = false;
+            fclose(file);
             break;
         }else{
             printf("[-] Testing: %s\n", passwd);
         }          
     }
-    fclose(file);
-    printf("\n\t\t[*] Finished!\n\n");
+    printf(RESET "\n\t\t[*] Finished!\n\n");
     if (breakpoint)
         fatal("Password not found.\n");
 }
