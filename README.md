@@ -35,7 +35,7 @@ _This project was developed with the following technologies_:
 
 ```sh
 # cloning repository
-git clone https://github.com/LinuxHashCracker
+git clone https://github.com/Dantalion-dev/LinuxHashCracker
 
 # enter on folder 
 cd LinuxHashCracker/
