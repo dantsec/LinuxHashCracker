@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
         if(result == NULL) {
             fclose(wordlist);
         
-            fatal("Error using crypt function");
+            fatal("Error using crypt function.\n");
         };
 
         if(strcmp(complete, result) == 0) {
