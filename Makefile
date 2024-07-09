@@ -1,4 +1,7 @@
 all:
-	gcc src/hash_cracker.c -o hash_cracker -lcrypt
+	mkdir src/obj
+
+	gcc -c src/lib/helpers.c -o src/obj/helpers.o
+	gcc src/main.c src/obj/helpers.o -o hash_cracker -lcrypt
 clean:
-	rm -f hash_cracker
+	rm -rf hash_cracker src/obj
