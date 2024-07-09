@@ -1,91 +1,68 @@
-<h1 align="center">
-  🦂 Linux Hash Cracker 
-</h1>
+# Linux Hash Cracker @ C + Crypt Project 🦂
 
-<p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Dantalion-dev/LinuxHashCracker">
+- **Linux Hash Cracker** is tool for cracking Linux passwords, which, based on a wordlist and the hash/salt of the password, we can crack it and return a result, in plain text, of the password in question.
+- Created in _27 / 04 / 2021_.
 
-  <!-- <img alt="Repository size" src="https://img.shields.io/github/repo-size/Dantalion-dev/LinuxHashCracker"> -->
-  
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Dantalion-dev/LinuxHashCracker">
+## Authors 👥
 
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-</p>
+- For more information see my blog and my contributions to community.
+  - [**@dantsec**](https://www.github.com/dantsec)
 
-<p align="center">
-  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
-  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
-  <a href="#%EF%B8%8F-installation">Installing</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
-  <a href="#-how-to-use">How to use</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
-  <a href="#-contributing">Contributing</a>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
-  <a href="#-license">License</a>
-</p>
+## Tech Stack 🧑‍💻
 
-<h2 align="center">🚀 Technologies</h2>
+- This project was developed with the following technologies:
+  - [**C**](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html) (Main Language)
+  - [**Make**](https://www.gnu.org/software/make/manual/make.html) (Utilitary)
 
-_This project was developed with the following technologies_:
+## Documents 📂
 
-- C language
+- [**MIT License**](./LICENSE)
 
-<h2 align="center">💻 Project</h2>
+## Installation / Run Locally ⚙️
 
-- _This is a project that I developed for my studies of linux hashes._
+- **Important**: First of all, you must have [**C compiler**](https://gcc.gnu.org/) and [**Make utilitary**](https://www.gnu.org/software/make/) installed.
 
-<h2 align="center">♟️ Installation</h2>
-
-```sh
-# cloning repository
-git clone https://github.com/Dantalion-dev/LinuxHashCracker
-
-# enter on folder 
-cd LinuxHashCracker/
-
-# installing "make"
-sudo apt update && sudo apt install make
-
-# compiling
-make
-
+- Clone and enter in the project:
+```bash
+git clone https://github.com/dantsec/LinuxHashCracker.git && cd LinuxHashCracker/
 ```
 
-<h2 align="center">🍀 How to use</h2>
+- Run `Makefile`
+```bash
+# To compile all.
+make all
+# To clean all.
+make clean
+```
+
+## Example of Use 🔎
 
 ```sh
-# using
-./hash_cracker <wordlist_path>
+# Executing binary.
+./hash_cracker "wordlist_path"
 
-examples:
+# Hash Example: $1$C.O8tO68$HOR08j8SCGSVc67div3qA/
+./hash_cracker wordlists/wordlist.txt
 
-# hash for this example: $1$C.O8tO68$HOR08j8SCGSVc67div3qA/
-
-  ./hash_cracker wordlists/rockyou.txt
-
-  Hash: $1$C.O8tO68$HOR08j8SCGSVc67div3qA/
-  Salt: $1$C.O8tO68$
+Hash: $1$C.O8tO68$HOR08j8SCGSVc67div3qA/
+Salt: $1$C.O8tO68$
 
               ...OBFUSCATED...
          [+] Found Password: toor
                 [*] Finished!
-
-
 ```
 
-![](https://media.discordapp.net/attachments/732350657243381810/837026010791804989/unknown.png)
-![](https://media.discordapp.net/attachments/732350657243381810/837026482651922452/unknown.png)
+## Contributing 🛠️
 
-<h2 align="center">🔨 Contributing</h2>
-
-_How can I contribute to the project?_
-
-```sh
-1. Create a fork from PlanetInfo repository.
-2. git clone https://github.com/your/LinuxHashCracker.git
-3. cd LinuxHashCracker/
-4. Make your changes.
-5. Commit and make a git push.
-6. Open a pull request.
+```bash
+# Create a fork from MagicPantry repository and clone it.
+git clone https://github.com/YOUR_USERNAME/LinuxHashCracker.git
+# Enter into the folder.
+cd LinuxHashCracker/
+# Create a new branch with the name feat-[WHAT_YOUR_FEAT_DO].
+git checkout -b feat-[WHAT_YOUR_FEAT_DO]
+# Make your changes and commit them.
+git add . && git commit -m "YOUR_COMMIT_MESSAGE"
+# Push and open a pull request.
+git push origin [YOUR_BRANCH_NAME]
 ```
-
-<h2 align="center">📝 license</h2>
-
-_This project is under the [MIT License](LICENSE)._
